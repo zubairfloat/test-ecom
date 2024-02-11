@@ -7,7 +7,7 @@ type ReviewsProductType = {
   product: ProductType
 }
 
-const Reviews = ({ show, product }: ReviewsProductType) => {
+const Reviews = ({ show, product }: any) => {
   const style = {
     display: show ? 'flex' : 'none',
   }

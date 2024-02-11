@@ -1,13 +1,14 @@
 # Updates!
 
-This new version contains an integration with redux-toolkit instead of redux and it's witch Typescript :)
+Hello, I'm Muhammad Zubair Rizwan, and I've developed a starter e-commerce application using Next.js. This updated version features an integration with Redux Toolkit, replacing Redux, and incorporates TypeScript for enhanced type safety and developer productivity.
 
 # Next.js Ecommerce
 
 This repo contains a work in progress Ecommerce responsive made with Next.js, Redux, Redux-persist, Hooks, SCSS and BEM. If you like it please give it a star :)
+
 ## Design
 
-[This](https://www.xdguru.com/free-xd-ecommerce-ui-kit-by-iceo/) is the design of the project.
+Currently, I'm in the initial phase of designing the beta version of my e-commerce platform. As I progress, I plan to customize each e-commerce site according to specific business needs and ideas. Feel free to share your requirements and ideas, and I'll incorporate them into the development process.
 
 ## Available pages
 
@@ -20,10 +21,6 @@ This repo contains a work in progress Ecommerce responsive made with Next.js, Re
 - 404 page: /page-not-found
 
 ## Screenshots
-
-![Next Ecommerce screenshot](https://lucaspulliese.com/wp-content/uploads/2020/09/ecommerce-1.jpg)
-
-![Next Ecommerce screenshot](https://lucaspulliese.com/wp-content/uploads/2020/09/ecommerce-2.jpg)
 
 ## Next TO-DO
 

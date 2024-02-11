@@ -1,9 +1,8 @@
 import Layout from '../layouts/Main';
-import ShoppingCart from '../components/shopping-cart';
 
 const Products = () => (
   <Layout>
-    <ShoppingCart />
+     <h3 className="cart__title">Shopping Cart</h3>
   </Layout>
 )
   

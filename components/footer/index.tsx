@@ -37,7 +37,7 @@ const Footer = () => {
             </ul>
             <ul>
               <li>Contact</li>
-              <li><a href="#">store@uikit.com</a></li>
+              <li><a href="#">zubairfloat@gmail.com</a></li>
               <li><a href="#">Hotline: +1 131 138 138</a></li>
             </ul>
           </div>
@@ -46,7 +46,7 @@ const Footer = () => {
       
       <div className="site-footer__bottom">
         <div className="container">
-          <p>DESIGN BY ICEO.CO - © 2019. ALL RIGHTS RESERVED.</p>
+          <p>DESIGN BY zubair - © 2022. ALL RIGHTS RESERVED.</p>
         </div>
       </div>
     </footer>

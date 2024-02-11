@@ -2,35 +2,19 @@ import { useState } from 'react';
 import productsColors from './../../../utils/data/products-colors';
 import productsSizes from './../../../utils/data/products-sizes';
 import CheckboxColor from './../../products-filter/form-builder/checkbox-color';
-import { useDispatch, useSelector } from 'react-redux';
-import { some } from 'lodash';
-import { addProduct } from 'store/reducers/cart';
-import { toggleFavProduct } from 'store/reducers/user';
-import { ProductType, ProductStoreType } from 'types';
-import { RootState } from 'store';
+import { ProductStoreType } from 'types';
 
-type ProductContent = {
-  product: ProductType;
-}
-
-const Content = ({ product }: ProductContent) => {
-  const dispatch = useDispatch();
+const Content = ({ product }: any) => {
   const [count, setCount] = useState<number>(1);
   const [color, setColor] = useState<string>('');
   const [itemSize, setItemSize] = useState<string>('');
 
   const onColorSet = (e: string) => setColor(e);
   const onSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => setItemSize(e.target.value);
-
-  const { favProducts } = useSelector((state: RootState) => state.user);
-  const isFavourite = some(favProducts, productId => productId === product.id);
+  const isFavourite = false;
 
   const toggleFav = () => {
-    dispatch(toggleFavProduct(
-      { 
-        id: product.id,
-      }
-    ))
+    console.log('toggle');
   }
 
   const addToCart = () => {
@@ -48,8 +32,8 @@ const Content = ({ product }: ProductContent) => {
       count,
       product: productToSave
     }
+    console.log(productStore);
 
-    dispatch(addProduct(productStore));
   }
 
   return (

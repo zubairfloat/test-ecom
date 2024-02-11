@@ -1,6 +1,5 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit'
 import { createWrapper } from 'next-redux-wrapper';
-import cartReducer from './reducers/cart';
 import userReducer from './reducers/user';
 import storage from 'redux-persist/lib/storage'
 import {
@@ -10,12 +9,10 @@ import {
 
 //COMBINING ALL REDUCERS
 const reducer = {
-  cart: cartReducer,
   user: userReducer
 }
 
 const rootReducer = combineReducers({
-  cart: cartReducer,
   user: userReducer,
 })
 

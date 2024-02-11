@@ -1,5 +1,3 @@
-import { GetServerSideProps } from 'next'
-
 import { useState } from 'react';
 import Footer from '../../components/footer';
 import Layout from '../../layouts/Main';
@@ -9,28 +7,11 @@ import Gallery from '../../components/product-single/gallery';
 import Content from '../../components/product-single/content';
 import Description from '../../components/product-single/description';
 import Reviews from '../../components/product-single/reviews';
-import { server } from '../../utils/server'; 
 
-// types
-import { ProductType } from 'types';
+import { GetServerSideProps } from 'next';
+import { server } from 'utils/server';
 
-type ProductPageType = {
-  product: ProductType;
-}
-
-export const getServerSideProps: GetServerSideProps = async ({ query }) => {
-  const pid = query.pid;
-  const res = await fetch(`${server}/api/product/${pid}`);
-  const product = await res.json();
-
-  return {
-    props: {
-      product,
-    },
-  }
-}
-
-const Product = ({ product }: ProductPageType) => {
+const Product = ({product}: any) => {
   const [showBlock, setShowBlock] = useState('description');
 
   return (
@@ -56,12 +37,24 @@ const Product = ({ product }: ProductPageType) => {
         </div>
       </section>
 
-      <div className="product-single-page">
+      {/* <div className="product-single-page">
         <ProductsFeatured />
-      </div>
+      </div> */}
       <Footer />
     </Layout>
   );
 }
 
 export default Product
+
+export const getServerSideProps: GetServerSideProps = async ({ query }) => {
+  const pid = query.pid;
+  const res = await fetch(`${server}/api/product`);
+  const product = await res.json();
+  const getProduct= product.find((item: { id: any}) => item.id === pid);
+  return {
+    props: {
+      product: getProduct,
+    },
+  }
+}

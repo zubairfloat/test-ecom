@@ -1,10 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
-import { useSelector } from 'react-redux';
 import useOnClickOutside from 'use-onclickoutside';
 import Logo from '../../assets/icons/logo';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { RootState } from 'store';
 
 type HeaderType = {
   isErrorPage?: Boolean;
@@ -12,7 +10,7 @@ type HeaderType = {
 
 const Header = ({ isErrorPage }: HeaderType) => {
   const router = useRouter();
-  const { cartItems } = useSelector((state: RootState)  => state.cart);
+  const cartItems = []; 
   const arrayPaths = ['/'];  
 
   const [onTop, setOnTop] = useState(( !arrayPaths.includes(router.pathname) || isErrorPage ) ? false : true);
@@ -56,7 +54,7 @@ const Header = ({ isErrorPage }: HeaderType) => {
     <header className={`site-header ${!onTop ? 'site-header--fixed' : ''}`}>
       <div className="container">
         <Link href="/">
-          <a><h1 className="site-logo"><Logo />E-Shop</h1></a>
+          <a><h1 className="site-logo"><Logo />Headless Ecom</h1></a>
         </Link>
         <nav ref={navRef} className={`site-nav ${menuOpen ? 'site-nav--open' : ''}`}>
           <Link href="/products">
@@ -78,7 +76,7 @@ const Header = ({ isErrorPage }: HeaderType) => {
           <Link href="/cart">
             <button className="btn-cart">
               <i className="icon-cart"></i>
-              {cartItems.length > 0 && 
+              {cartItems?.length > 0 && 
                 <span className="btn-cart__count">{cartItems.length}</span>
               }
             </button>
